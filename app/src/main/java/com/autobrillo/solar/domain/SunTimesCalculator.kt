@@ -34,11 +34,19 @@ class SunTimesCalculator(private val context: android.content.Context) {
 
     fun fromEpoch(sunriseMillis: Long, sunsetMillis: Long): SunTimes {
         val zone = ZoneId.systemDefault()
-        if (sunriseMillis <= 0L || sunsetMillis <= 0L || sunsetMillis <= sunriseMillis) {
+        if (sunriseMillis <= 0L || sunsetMillis <= 0L) {
             return defaultSunTimes(zone)
         }
-        val sunrise = ZonedDateTime.ofInstant(Instant.ofEpochMilli(sunriseMillis), zone)
-        val sunset = ZonedDateTime.ofInstant(Instant.ofEpochMilli(sunsetMillis), zone)
+        val sunriseTime = Instant.ofEpochMilli(sunriseMillis).atZone(zone).toLocalTime()
+        val sunsetTime = Instant.ofEpochMilli(sunsetMillis).atZone(zone).toLocalTime()
+        val today = LocalDate.now(zone)
+        var sunrise = ZonedDateTime.of(today, sunriseTime, zone)
+        var sunset = ZonedDateTime.of(today, sunsetTime, zone)
+        if (!sunset.isAfter(sunrise)) {
+            // If both instants come from the previous day, sunset will appear before sunrise
+            // once we clamp them to "today". Push sunset to the next day so the interval is valid.
+            sunset = sunset.plusDays(1)
+        }
         return SunTimes(sunrise, sunset)
     }
 
