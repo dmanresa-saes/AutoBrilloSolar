@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AutoBrillo Solar</string>
+    <string name="notification_desc">Ajuste automatico del brillo</string>
+    <string name="notification_content">Amanecer %1$s | Ocaso %2$s | Offset %3$.1f%%</string>
+    <string name="action_pause">Pausar</string>
+    <string name="action_resume">Reanudar</string>
+    <string name="status_paused">Servicio pausado</string>
+    <string name="status_active">Servicio activo</string>
+    <string name="status_waiting">Esperando pantalla encendida</string>
+    <string name="label_sunrise">Amanecer: %1$s</string>
+    <string name="label_sunset">Ocaso: %1$s</string>
+    <string name="label_offset_value">Offset: %1$.1f%%</string>
+    <string name="label_version">Version %1$s (%2$d) · %3$s</string>
+    <string name="label_debug_info">Lux %1$.0f · Aplicado %2$d%% · %3$s</string>
+    <string name="label_permissions">Camara %1$s - Ubicacion %2$s - Sistema %3$s - Notif %4$s</string>
+    <string name="error_camera_permission">Permiso de camara requerido. Concedelo para reanudar.</string>
+    <string name="error_write_settings">Permiso del sistema WRITE_SETTINGS pendiente.</string>
+    <string name="action_update_location">Actualizar ubicacion solar</string>
+    <string name="toast_location_updated_success">Ubicacion actualizada con exito</string>
+    <string name="toast_location_fallback">No se pudo obtener la ubicacion, usando horarios por defecto</string>
+    <string name="toast_location_error">Error al actualizar la ubicacion</string>
+    <string name="toast_location_permission_needed">Activa el permiso de ubicacion para actualizar.</string>
+    <string name="night_toggle_on">Modo noche (0%)</string>
+    <string name="night_toggle_off">Modo automatico</string>
+    <string name="toast_night_mode_on">Modo noche activado</string>
+    <string name="toast_night_mode_off">Modo automatico restaurado</string>
+</resources>

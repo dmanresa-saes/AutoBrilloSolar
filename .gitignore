@@ -1,0 +1,15 @@
+# Gradle
+/.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+app/build/
+outputs/
+captures/
+.cxx/
+*.iml
+# Android Studio
+.idea/
+.gradle/
+commandlinetools-linux-*.zip
